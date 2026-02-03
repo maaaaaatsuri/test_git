@@ -1,14 +1,20 @@
-import React from 'react'
-import Child from './components/Child'
-
-const Example: React.FC = () => {
-  return (
-    <div>
-      <h3>練習問題</h3>
-      <p>/componentsフォルダをstart内に作成して、Childにコンポーネントを分離して、Exampleコンポーネントで読み込んでください。</p>
-      <Child />
-    </div>
-  )
-}
-
-export default Example
+const Example = () => {
+    const title = 'Expression';
+    const array = ['item1', 'item2', 'item3'];
+    const fn = (arg) => {
+        return `${arg} Function`;
+    };
+    const upperCaseText = 'UpperCaseText';
+    const jsx = <h3>Hello JSX</h3>;
+    return (
+        <div className={upperCaseText.toLowerCase()}>
+            <h3>{title}</h3>
+            <h3>{array}</h3>
+            <h3>{fn('Hello')}</h3>
+            {jsx}
+            {<h3>Hello JSX</h3>}
+        </div>
+    );
+};
+ 
+export default Example;
