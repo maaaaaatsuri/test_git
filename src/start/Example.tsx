@@ -1,20 +1,20 @@
+import { useState } from "react";
+
 const Example = () => {
-    const title = 'Expression';
-    const array = ['item1', 'item2', 'item3'];
-    const fn = (arg) => {
-        return `${arg} Function`;
-    };
-    const upperCaseText = 'UpperCaseText';
-    const jsx = <h3>Hello JSX</h3>;
-    return (
-        <div className={upperCaseText.toLowerCase()}>
-            <h3>{title}</h3>
-            <h3>{array}</h3>
-            <h3>{fn('Hello')}</h3>
-            {jsx}
-            {<h3>Hello JSX</h3>}
-        </div>
-    );
+  const [ count, setCount ] = useState(0)
+  const countUp = () => {
+    setCount(count + 1)
+  }
+  const countDown = () => {
+    setCount(count - 1)
+  }
+  return (
+    <>
+      <p>現在のカウント数: {count}</p>
+      <button onClick={countUp}>+</button>
+      <button onClick={countDown}>-</button>
+    </>
+  );
 };
  
 export default Example;
