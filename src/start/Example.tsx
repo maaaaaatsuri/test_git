@@ -1,20 +1,35 @@
-import { useState } from "react";
+import Profile from "./components/Profile";
+
+const profiles = [
+  {
+    name: "Geo",
+    age: 18,
+    hobbies: ["sports", "music"],
+  },
+  {
+    name: "Tom",
+    age: 25,
+    hobbies: ["movie", "music"],
+  },
+  {
+    name: "Lisa",
+    age: 21,
+    hobbies: ["sports", "travel", "game"],
+  },
+];
 
 const Example = () => {
-  const [ count, setCount ] = useState(0)
-  const countUp = () => {
-    setCount(count + 1)
-  }
-  const countDown = () => {
-    setCount(count - 1)
-  }
   return (
     <>
-      <p>現在のカウント数: {count}</p>
-      <button onClick={countUp}>+</button>
-      <button onClick={countDown}>-</button>
+      <ul>
+        {profiles.map((profile) => (
+          <li key={profile.name}>
+          <Profile {...profile} />
+          </li>
+        ))}
+      </ul>
     </>
   );
 };
- 
+
 export default Example;
